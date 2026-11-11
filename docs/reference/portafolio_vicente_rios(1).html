@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f0c342">
+  <meta name="description" content="Portafolio profesional de Vicente Ríos Valdivia, Ingeniero en Negocios Internacionales. Aduanas, documentación, adquisiciones, importación y exportación.">
+  <title>Vicente Ríos Valdivia | Negocios Internacionales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #8FC5DF;
+      --yellow-dark: #8FC5DF;
+      --red: #244e73;
+      --red-dark: #102d49;
+      --ink: #091d32;
+      --navy: #091d32;
+      --navy-mid: #123452;
+      --navy-light: #244e73;
+      --cream: #eef2f5;
+      --paper: #f8fafc;
+      --muted: #617184;
+      --line: rgba(25,27,26,.18);
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --display: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--cream);
+      font-family: var(--sans); overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 10;
+      opacity: .12; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    .topline {
+      height: 7px; background: repeating-linear-gradient(90deg,var(--red) 0 48px,var(--yellow) 48px 96px,var(--ink) 96px 144px);
+    }
+    .nav {
+      position: absolute; z-index: 5; top: 7px; left: 0; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px clamp(22px,6vw,90px); color: white;
+    }
+    .brand { text-decoration: none; font-weight: 800; letter-spacing: -.06em; font-size: 1.25rem; }
+    .brand span { color: var(--yellow); }
+    .nav-links { display: flex; gap: clamp(14px,2.7vw,38px); align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,.88); text-decoration: none; font: 500 .72rem var(--mono);
+      text-transform: uppercase; letter-spacing: .08em; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      border: 1px solid var(--yellow); color: var(--yellow)!important;
+      padding: 10px 14px;
+    }
+    .hero {
+      min-height: 710px; height: min(860px, 94vh); position: relative; isolation: isolate;
+      display: flex; align-items: center; overflow: hidden; color: white;
+      background: #091d32;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center center; z-index: -2;
+      image-rendering: auto;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+    }
+    .hero::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12px;
+      background: var(--yellow);
+    }
+    .hero-inner { width: min(1240px,88%); margin: 42px auto 0; position: relative; }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+      color: var(--yellow); font: 500 .72rem var(--mono); letter-spacing: .16em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 38px; height: 2px; background: var(--yellow); }
+    h1 {
+      font: 900 clamp(3.7rem,8.4vw,8rem)/.91 var(--display);
+      letter-spacing: -.065em; margin: 0; max-width: 800px; text-wrap: balance;
+    }
+    h1 .surname { color: var(--yellow); display: block; }
+    .hero-role {
+      margin: 28px 0 0; max-width: 620px; font-size: clamp(1rem,1.55vw,1.25rem);
+      line-height: 1.65; color: rgba(255,255,255,.85);
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .hero-tags span {
+      padding: 8px 11px; border: 1px solid rgba(255,255,255,.38);
+      color: white; font:  .66rem var(--mono); text-transform: uppercase; letter-spacing: .07em;
+      backdrop-filter: blur(5px);
+    }
+    .hero-bottom {
+      display: flex; align-items: center; gap: 18px; margin-top: 40px;
+      font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .1em;
+    }
+    .hero-bottom a {
+      text-decoration: none; background: var(--yellow); color: var(--ink);
+      padding: 14px 20px; font-weight: 500; transition: transform .2s,background .2s;
+    }
+    .hero-bottom a:hover { transform: translateY(-3px); background: white; }
+    .hero-bottom span { color: rgba(255,255,255,.65); }
+    .stamp {
+      position: absolute; right: 7%; bottom: 9%; width: 125px; height: 125px;
+      border: 2px solid var(--yellow); border-radius: 50%; color: var(--yellow);
+      display: grid; place-items: center; text-align: center; transform: rotate(12deg);
+      font: 500 .62rem/1.5 var(--mono); letter-spacing: .08em;
+    }
+    .stamp b { font: 900 1.5rem var(--display); display: block; }
+    .ticker {
+      background: var(--yellow); color: var(--ink); overflow: hidden; white-space: nowrap;
+      border-bottom: 1px solid var(--ink); padding: 13px 0;
+      font: 500 .72rem var(--mono); letter-spacing: .12em; text-transform: uppercase;
+    }
+    .ticker-track { display: inline-block; min-width: 200%; animation: marquee 28s linear infinite; }
+    .ticker span { margin: 0 28px; }
+    .ticker b { color: var(--red); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    .section { padding: clamp(78px,10vw,142px) 0; }
+    .wrap { width: min(1120px,86%); margin: auto; }
+    .section-kicker {
+      color: var(--red); font: 500 .7rem var(--mono); text-transform: uppercase;
+      letter-spacing: .16em; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-kicker::after { content:""; width: 48px; height: 1px; background: var(--red); }
+    .section-title {
+      font: 800 clamp(2.5rem,5vw,4.8rem)/1 var(--display); letter-spacing: -.055em;
+      margin: 0 0 28px; max-width: 800px;
+    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(38px,8vw,110px); align-items: center; }
+    .portrait-wrap { position: relative; max-width: 410px; }
+    .portrait-wrap::before {
+      content: ""; position: absolute; inset: 18px -18px -18px 18px;
+      border: 2px solid var(--red); z-index: -1;
+    }
+    .portrait {
+      display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 25%;
+      filter: saturate(.8) contrast(1.04); background: #ddd;
+    }
+    .portrait-caption {
+      position: absolute; left: -18px; bottom: 25px; background: var(--yellow);
+      color: var(--ink); padding: 12px 16px; font: .65rem var(--mono); letter-spacing: .08em;
+      text-transform: uppercase; box-shadow: 4px 4px 0 var(--ink);
+    }
+    .about-copy p { color: #4c4a43; font-size: 1.04rem; line-height: 1.9; margin: 0 0 18px; }
+    .about-copy .lead { color: var(--ink); font: 700 clamp(1.25rem,2vw,1.65rem)/1.45 var(--display); }
+    .facts {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 0;
+      margin-top: 34px; border-top: 1px solid var(--line);
+    }
+    .fact { padding: 18px 14px 18px 0; border-bottom: 1px solid var(--line); }
+    .fact small { display: block; color: var(--muted); font: .62rem var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 7px; }
+    .fact strong { font-size: .92rem; }
+    .dark-section { background: linear-gradient(145deg, #07182a 0%, #102f4d 100%); color: var(--cream); position: relative; }
+    .dark-section .section-kicker { color: var(--yellow); }
+    .dark-section .section-kicker::after { background: var(--yellow); }
+    .dark-section .section-title { color: var(--cream); }
+    .timeline { margin-top: 54px; border-top: 1px solid rgba(255,255,255,.22); }
+    .job {
+      display: grid; grid-template-columns: 190px 1fr; gap: 42px;
+      padding: 38px 0; border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+    .job-date { color: var(--yellow); font: .72rem/1.7 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .job-type { color: rgba(255,255,255,.5); display: block; margin-top: 8px; font-size: .72rem; }
+    .job h3 { font: 700 clamp(1.35rem,2.4vw,2rem)/1.2 var(--display); margin: 0 0 8px; }
+    .job-company { color: var(--yellow); font-size: .84rem; margin-bottom: 18px; }
+    .job p { color: rgba(255,255,255,.69); line-height: 1.8; margin: 0; max-width: 760px; font-size: .94rem; }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+    .job-tags span {
+      color: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.22);
+      padding: 6px 9px; font: .6rem var(--mono); text-transform: uppercase; letter-spacing: .04em;
+    }
+    .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .edu-card {
+      background: var(--yellow); color: var(--ink); padding: clamp(26px,4vw,42px);
+      min-height: 270px; position: relative; overflow: hidden;
+    }
+    .edu-card::after {
+      content: "UV"; position: absolute; right: -7px; bottom: -42px;
+      color: rgba(25,27,26,.08); font: 900 11rem var(--display); line-height: 1;
+    }
+    .edu-label { font: .66rem var(--mono); text-transform: uppercase; letter-spacing: .12em; }
+    .edu-card h3 { font: 800 clamp(1.5rem,2.8vw,2.25rem)/1.15 var(--display); margin: 28px 0 12px; max-width: 430px; position: relative; z-index: 1; }
+    .edu-card p { margin: 0; line-height: 1.7; font-size: .9rem; position: relative; z-index: 1; }
+    .edu-year { position: absolute; bottom: 25px; left: 28px; font: .7rem var(--mono); z-index: 1; }
+    .edu-card.secondary { background: var(--paper); border: 1px solid var(--line); }
+    .edu-card.secondary::after { content: "WCO"; font-size: 6rem; bottom: 8px; right: 12px; }
+    .volunteer { margin-top: 26px; padding: 28px 32px; border: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+    .volunteer h3 { font: 700 1.4rem var(--display); margin: 0 0 7px; }
+    .volunteer p { color: var(--muted); line-height: 1.7; margin: 0; font-size: .9rem; max-width: 760px; }
+    .volunteer-date { color: var(--red); font: .68rem var(--mono); text-align: right; white-space: nowrap; }
+    .skills-section { background: #e4eaf0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 46px; }
+    .skill {
+      background: #e4eaf0; min-height: 185px; padding: 28px 25px; transition: background .25s,transform .25s;
+    }
+    .skill:hover { background: var(--yellow); transform: translateY(-4px); }
+    .skill-num { color: var(--red); font: .68rem var(--mono); }
+    .skill h3 { font: 700 1.25rem var(--display); margin: 24px 0 10px; }
+    .skill p { color: var(--muted); font-size: .84rem; line-height: 1.6; margin: 0; }
+    .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 42px; }
+    .course {
+      background: var(--paper); border: 1px solid var(--line); padding: 25px 26px;
+      display: flex; gap: 17px; align-items: flex-start;
+    }
+    .course-icon {
+      flex: 0 0 42px; height: 42px; display: grid; place-items: center;
+      background: var(--navy, #091d32); color: white; font: 700 1rem var(--display);
+    }
+    .course h3 { margin: 0 0 8px; font-size: .95rem; line-height: 1.45; }
+    .course p { margin: 0; color: var(--muted); font: .65rem var(--mono); line-height: 1.6; text-transform: uppercase; }
+    .closing {
+      background: var(--navy, #091d32); color: white; padding: clamp(70px,10vw,125px) 0; position: relative; overflow: hidden;
+    }
+    .closing::after {
+      content: "VRV"; position: absolute; right: -20px; bottom: -90px;
+      color: rgba(255,255,255,.07); font: 900 clamp(12rem,30vw,27rem)/1 var(--display);
+      pointer-events: none;
+    }
+    .closing .section-kicker { color: var(--yellow); }
+    .closing .section-kicker::after { background: var(--yellow); }
+    .closing h2 {
+      font: 900 clamp(3rem,7vw,6.7rem)/.95 var(--display); letter-spacing: -.06em;
+      max-width: 850px; margin: 0; position: relative; z-index: 1;
+    }
+    .closing h2 span { color: var(--yellow); }
+    .closing p { color: rgba(255,255,255,.78); max-width: 540px; line-height: 1.8; margin-top: 28px; position: relative; z-index: 1; }
+    footer {
+      background: #061525; color: rgba(255,255,255,.62); padding: 25px clamp(22px,6vw,90px);
+      display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+      font: .63rem var(--mono); text-transform: uppercase; letter-spacing: .08em;
+    }
+    footer strong { color: var(--yellow); }
+    .backtop { color: var(--yellow); text-decoration: none; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 760px) {
+      .nav { padding: 20px 6%; }
+      .nav-links { gap: 13px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { min-height: 720px; height: 90svh; }
+      .hero-bg { object-position: 62% center; }
+      .hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center center; z-index: -2;
+      image-rendering: auto;
+    }
+    .hero::before { background: linear-gradient(90deg,rgba(5,19,35,.94),rgba(5,19,35,.70) 72%,rgba(5,19,35,.38)); }
+      .hero-inner { width: 88%; margin-top: 40px; }
+      h1 { font-size: clamp(3.8rem,15vw,6.5rem); }
+      .stamp { width: 90px; height: 90px; right: 7%; bottom: 7%; font-size: .5rem; }
+      .stamp b { font-size: 1.15rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 55px; }
+      .portrait-wrap { width: min(78%,370px); margin: 0 auto; }
+      .job { grid-template-columns: 1fr; gap: 14px; }
+      .education-grid,.courses { grid-template-columns: 1fr; }
+      .volunteer { grid-template-columns: 1fr; }
+      .volunteer-date { text-align: left; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 440px) {
+      .hero-tags span { font-size: .56rem; }
+      .hero-bottom { align-items: flex-start; flex-direction: column; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .fact { padding-right: 8px; }
+      .fact strong { font-size: .82rem; }
+      .volunteer { padding: 23px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto!important; animation-duration: .01ms!important; transition-duration: .01ms!important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media print {
+      .nav,.ticker,.hero-bottom,.backtop { display: none!important; }
+      .hero { height: auto; min-height: 540px; print-color-adjust: exact; }
+      .section { padding: 42px 0; }
+      .reveal { opacity: 1; transform: none; }
+      body::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="hero" id="inicio">
+    <img class="hero-bg" src="https://delivery.pixelbin.io/predictions/outputs/1d/sr/upscaleRestricted/01a19997-d732-7772-867a-56d1d93d2985/result_0.png"
+         alt="" fetchpriority="high" decoding="async">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">VICENTE<span>.</span>RV</a>
+      <div class="nav-links">
+        <a href="#perfil">Perfil</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formación</a>
+        <a href="#competencias">Competencias</a>
+        <a class="nav-cta" href="#contacto">Contacto</a>
+      </div>
+    </nav>
+    <div class="hero-inner">
+      <div class="eyebrow">Negocios sin fronteras · Chile</div>
+      <h1>Vicente <span class="surname">Ríos Valdivia</span></h1>
+      <p class="hero-role">Ingeniero en Negocios Internacionales. Con interés y experiencia formativa en adquisiciones, logística, comercio exterior y gestión de proveedores.</p>
+      <div class="hero-tags">
+        <span>Import / Export</span><span>Adquisiciones</span><span>Negociación</span><span>Documentación</span>
+      </div>
+      <div class="hero-bottom">
+        <a href="#perfil">Conoce mi perfil <span aria-hidden="true">↘</span></a>
+        <span>Ingeniería en Negocios Internacionales · UV</span>
+      </div>
+    </div>
+    <div class="stamp" aria-label="Perfil profesional"><div><b>VRV</b>PERFIL<br>PROFESIONAL<br>2026</div></div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Comercio exterior</span><b>✳</b><span>Abastecimiento</span><b>✳</b><span>Negociación</span><b>✳</b><span>Logística</span><b>✳</b><span>Importación & exportación</span><b>✳</b>
+      <span>Comercio exterior</span><b>✳</b><span>Abastecimiento</span><b>✳</b><span>Negociación</span><b>✳</b><span>Logística</span><b>✳</b><span>Importación & exportación</span><b>✳</b>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" id="perfil">
+      <div class="wrap about-grid">
+        <div class="portrait-wrap reveal">
+          <img class="portrait" src="https://i.postimg.cc/vmYbQMkX/imagen.png" alt="Retrato profesional de Vicente Ríos Valdivia">
+          <div class="portrait-caption">Vicente Ríos Valdivia · Chile</div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="section-kicker">01 / El perfil</div>
+          <h2 class="section-title">Conectar personas, procesos y oportunidades.</h2>
+          <p class="lead">Una mirada estratégica para desenvolverse en entornos de negocios internacionales.</p>
+          <p>Ingeniero en Negocios Internacionales de la Universidad de Valparaíso, con mención en Idioma Francés. Mi formación y experiencia me han permitido acercarme a procesos de adquisiciones, abastecimiento, logística y comercio exterior.</p>
+          <p>Me interesa contribuir a la búsqueda de soluciones, la coordinación con proveedores y el desarrollo de relaciones profesionales basadas en la comunicación, el análisis y la colaboración.</p>
+          <div class="facts">
+            <div class="fact"><small>Formación</small><strong>Ingeniería en Negocios Internacionales</strong></div>
+            <div class="fact"><small>Universidad</small><strong>Universidad de Valparaíso</strong></div>
+            <div class="fact"><small>Mención</small><strong>Idioma Francés</strong></div>
+            <div class="fact"><small>Áreas</small><strong>Compras · Logística · Comercio exterior</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="experiencia">
+      <div class="wrap">
+        <div class="section-kicker reveal">02 / Trayectoria</div>
+        <h2 class="section-title reveal">Experiencia profesional.</h2>
+        <div class="timeline">
+          <article class="job reveal">
+            <div class="job-date">Enero — Marzo 2026<span class="job-type">Práctica profesional · Jornada completa<br>Valparaíso, Chile · Presencial</span></div>
+            <div>
+              <h3>Practicante profesional de adquisiciones</h3>
+              <div class="job-company">ASMAR · Departamento de Abastecimiento · Subgerencia de Logística</div>
+              <p>Participación en procesos del área de adquisiciones, colaborando en la gestión y trato con proveedores, órdenes de compra, análisis de precios y búsqueda de soluciones ante requerimientos originados en planta. Apoyo en tareas asociadas a los procesos de compra nacional e internacional, con exposición a temáticas de logística, embarcadores, importación y exportación.</p>
+              <div class="job-tags"><span>Proveedores</span><span>Órdenes de compra</span><span>Análisis de precios</span><span>Compras nacionales e internacionales</span></div>
+            </div>
+          </article>
+          <article class="job reveal">
+            <div class="job-date">Marzo — Diciembre 2022<span class="job-type">Jornada parcial<br>Viña del Mar, Chile · Presencial</span></div>
+            <div>
+              <h3>Mentor académico</h3>
+              <div class="job-company">Universidad de Valparaíso · Dirección General de Pregrado</div>
+              <p>Mentor de la Unidad de Atención Preferencial a los Primeros Años. Acompañamiento y orientación a estudiantes de primer año de Ingeniería en Negocios Internacionales, especialmente en las asignaturas Introducción a los Negocios Internacionales e Historia de las Relaciones Internacionales. Apoyo en la comprensión de contenidos, métodos de aprendizaje y organización del estudio.</p>
+              <div class="job-tags"><span>Mentoría</span><span>Comunicación</span><span>Orientación académica</span><span>Colaboración</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formacion">
+      <div class="wrap">
+        <div class="section-kicker reveal">03 / Formación y participación</div>
+        <h2 class="section-title reveal">Conocimiento en movimiento.</h2>
+        <div class="education-grid">
+          <article class="edu-card reveal">
+            <div class="edu-label">Formación académica</div>
+            <h3>Ingeniero en Negocios Internacionales</h3>
+            <p>Universidad de Valparaíso<br>Mención en Idioma Francés</p>
+            <div class="edu-year">MAR. 2020 — JUL. 2026</div>
+          </article>
+          <article class="edu-card secondary reveal">
+            <div class="edu-label">Participación internacional</div>
+            <h3>3rd WCO Global Origin Conference</h3>
+            <p>Oyente y ayudante en encuentro internacional centrado en reglas de origen. Apoyo en la recepción de delegaciones de distintos países.</p>
+            <div class="edu-year">NOVIEMBRE 2023 · SANTIAGO, CHILE</div>
+          </article>
+        </div>
+        <div class="volunteer reveal">
+          <div>
+            <h3>Ayudante voluntario · World Customs Organization</h3>
+            <p>Participación en la conferencia realizada los días 8 y 9 de noviembre de 2023 en el Hotel InterContinental, Santiago. Colaboración en la recepción y orientación de delegaciones internacionales.</p>
+          </div>
+          <div class="volunteer-date">NOV. 2023<br>1 MES</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="competencias">
+      <div class="wrap">
+        <div class="section-kicker reveal">04 / Áreas de interés</div>
+        <h2 class="section-title reveal">Una visión amplia del comercio.</h2>
+        <div class="skills-grid">
+          <article class="skill reveal"><div class="skill-num">01 — 06</div><h3>Adquisiciones</h3><p>Procesos de compra, órdenes de compra y apoyo a la gestión de abastecimiento.</p></article>
+          <article class="skill reveal"><div class="skill-num">02 — 06</div><h3>Proveedores</h3><p>Comunicación, coordinación y búsqueda de soluciones ante requerimientos operativos.</p></article>
+          <article class="skill reveal"><div class="skill-num">03 — 06</div><h3>Comercio exterior</h3><p>Interés y formación en importaciones, exportaciones y operaciones internacionales.</p></article>
+          <article class="skill reveal"><div class="skill-num">04 — 06</div><h3>Logística</h3><p>Acercamiento a abastecimiento, embarcadores y necesidades de planta.</p></article>
+          <article class="skill reveal"><div class="skill-num">05 — 06</div><h3>Negociación</h3><p>Análisis de precios, comunicación y colaboración en la búsqueda de acuerdos.</p></article>
+          <article class="skill reveal"><div class="skill-num">06 — 06</div><h3>Idiomas y comunicación</h3><p>Formación universitaria con mención en Idioma Francés y experiencia de mentoría académica.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cursos">
+      <div class="wrap">
+        <div class="section-kicker reveal">05 / Formación complementaria</div>
+        <h2 class="section-title reveal">Cursos y certificaciones.</h2>
+        <div class="courses">
+          <article class="course reveal">
+            <div class="course-icon">01</div>
+            <div><h3>Seguridad en ASMAR, Inclusión y Diversidad, Ley Karin y Capacidades Sociolaborales</h3><p>Asociado con ASMAR</p></div>
+          </article>
+          <article class="course reveal">
+            <div class="course-icon">02</div>
+            <div><h3>Técnicas para la Aplicación de Capacidades Sociolaborales e Inserción Laboral</h3><p>ASMAR · Código: 1238081075</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contacto">
+      <div class="wrap">
+        <div class="section-kicker reveal">06 / Próximo capítulo</div>
+        <h2 class="reveal">Las buenas oportunidades <span>no conocen fronteras.</span></h2>
+        <p class="reveal">Vicente Ríos Valdivia · Ingeniero en Negocios Internacionales. Un perfil orientado a conectar conocimientos, personas y procesos en un entorno global.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> <strong>Vicente Ríos Valdivia</strong> · Portafolio profesional</div>
+    <a class="backtop" href="#inicio">Volver arriba ↑</a>
+    <div>Diseñado para presentar una trayectoria sin fronteras.</div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Animaciones discretas al entrar en pantalla
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
